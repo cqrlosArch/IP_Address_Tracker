@@ -1,0 +1,53 @@
+.header {
+  width: 100%;
+  height: $heightHeader;
+  background-image: url("../images/pattern-bg.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    width: 500px;
+    overflow: hidden;
+    margin-top: 1rem;
+    .form__input {
+      display: inline-block;
+      outline: none;
+      border: none;
+      font-size: 16px;
+      height: 40px;
+      width:inherit;
+      padding: 0.7rem 1rem;
+      border-radius: 5px;
+    }
+    .form__button {
+      border: none;
+      outline: none;
+      position: absolute;
+      right: -3px;
+      top: -5px;
+      height: 50px;
+      width: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color;
+      background-color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}

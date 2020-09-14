@@ -1,0 +1,27 @@
+extends templates/template.pug
+
+block title
+  title IP Address Tracker - Home
+
+
+block content
+    include components/header.pug
+    main.main
+      section#display.display
+        .box.box__address
+          h2.box__title IP ADDRESS
+          P.box__text 192.168.111.021
+        hr.display__separator
+        .box.box__location
+          h2.box__title LOCATION
+          P.box__text Broklyn, NY 10001
+        hr.display__separator
+        .box.box__timezone
+          h2.box__title TIMEZONE
+          P.box__text UTC -05:00
+        hr.display__separator
+        .box.box__isp
+          h2.box__title ISP
+          P.box__text SpaceX Starlink
+      section.display-map
+        #map.map
