@@ -1,10 +1,10 @@
 .display {
   position: absolute;
-  z-index: 500;
+  z-index: 1000;
   color: $veryDarkGray;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -210%);
+  transform: translate(-50%, -120%);
   background-color: #fff;
   display: flex;
   justify-content: space-around;
@@ -12,11 +12,24 @@
   width: 70%;
   height: 130px;
   border-radius: 15px;
+
+  @media screen and(max-width: $Mobile) {
+    flex-direction: column;
+    height: 300px;
+    
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+
   &__separator {
     width: 1px;
     height: 70px;
     color: rgba($color: #000000, $alpha: 0.3);
     margin: 0;
+
+    @media screen and(max-width: $Mobile) {
+     display: none;
+    }
   }
   .box {
     width: 100%;
@@ -28,6 +41,11 @@
     align-items: stretch;
     padding: 0.5rem 1.5rem;
     text-align: left;
+    @media screen and(max-width: $Mobile) {
+      padding: 0 inherit;
+      text-align: center;
+      margin-top: 1rem;
+    }
 
     &__title {
       margin: 0;
@@ -37,6 +55,10 @@
       font-size: 12px;
       text-align: left;
       letter-spacing: 0.1rem;
+      @media screen and(max-width: $Mobile) {
+        margin: 0;
+        text-align: center;
+      }
     }
 
     &__text {

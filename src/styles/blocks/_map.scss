@@ -1,7 +1,9 @@
-
 .display-map{
     height: 100%;
     width: 100%;
+    @media screen and(max-width: $Mobile) {
+        height: 800px;
+      }
     .map{
         height: inherit;
         width: inherit;
