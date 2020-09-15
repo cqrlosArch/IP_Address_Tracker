@@ -38,8 +38,13 @@ const getCoordinates = async (ipAddress = "100.38.151.146") => {
 };
 
 const createMap = (lat = 40.71427, lng = -74.00597) => {
+  let zoom = true;
+  if (window.innerWidth < 900) zoom = false;
+  console.log(windowWithd);
   mapDiv.innerHTML = "<div id='map' class='map'></div>";
-  const mymap = L.map("map").setView([lat, lng], 13);
+  const mymap = L.map("map", {
+    zoomControl: zoom,
+  }).setView([lat, lng], 13);
   const myIcon = L.icon({
     iconUrl: `${icon}`,
     iconSize: [46, 56],
@@ -67,6 +72,8 @@ $form.addEventListener("submit", (e) => {
 
 const main = () => {
   getCoordinates();
+  let windowWithd = window.innerWidth;
+  console.log(windowWithd);
 };
 
 export default main;
