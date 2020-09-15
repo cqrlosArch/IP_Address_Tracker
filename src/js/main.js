@@ -16,13 +16,11 @@ const API_KEY = "at_KUae5hsltFfSyvXQy6bDaxXvd2WiZ";
 const URL = "https://geo.ipify.org/api/v1";
 
 const getCoordinates = async (ipAddress = "100.38.151.146") => {
-  console.log(ipAddress);
   try {
     const response = await axios.get(
       `https://cors-anywhere.herokuapp.com/${URL}?apiKey=${API_KEY}&domain=${ipAddress}`
     );
     const json = response.data;
-    console.log(json);
     $ipAddress.textContent = json.ip;
     $location.textContent = `${json.location.city}, ${json.location.region} ${json.location.postalCode}`;
     $timezone.textContent = `UTC ${json.location.timezone}`;
@@ -33,14 +31,13 @@ const getCoordinates = async (ipAddress = "100.38.151.146") => {
 
     createMap(lat, lng);
   } catch (error) {
-    console.log(error);
+    //console.log(error);
   }
 };
 
 const createMap = (lat = 40.71427, lng = -74.00597) => {
   let zoom = true;
   if (window.innerWidth < 900) zoom = false;
-  console.log(windowWithd);
   mapDiv.innerHTML = "<div id='map' class='map'></div>";
   const mymap = L.map("map", {
     zoomControl: zoom,
@@ -72,8 +69,6 @@ $form.addEventListener("submit", (e) => {
 
 const main = () => {
   getCoordinates();
-  let windowWithd = window.innerWidth;
-  console.log(windowWithd);
 };
 
 export default main;
