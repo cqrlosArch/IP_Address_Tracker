@@ -1,7 +1,7 @@
 # Frontend Mentor - IP Address Tracker
 
 <p align="center">
-  <img src="capture.png">
+  <img src="myscreenshot_main.png">
 </p>
 
 
