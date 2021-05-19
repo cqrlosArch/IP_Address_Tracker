@@ -16,9 +16,10 @@ const API_KEY = "at_KUae5hsltFfSyvXQy6bDaxXvd2WiZ";
 const URL = "https://geo.ipify.org/api/v1";
 
 const getCoordinates = async (ipAddress = "100.38.151.146") => {
+  const proxy_url = 'https://cors.bridged.cc/';
   try {
     const response = await axios.get(
-      `https://cors-anywhere.herokuapp.com/${URL}?apiKey=${API_KEY}&domain=${ipAddress}`
+      `${proxy_url}${URL}?apiKey=${API_KEY}&domain=${ipAddress}`
     );
     const json = response.data;
     $ipAddress.textContent = json.ip;
